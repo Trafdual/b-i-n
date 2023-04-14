@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>Edit</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="jumbotron text-center">
+    <h1 class="text-center">Cập nhật</h1>
+    <hr><br>
+    <form method="post" action="">
+      <div class="row">
+        <span class="col-lg-2"></span>
+        <label class="col-lg-2">Tên nhân viên: </label>
+        <input class="col-lg-4" required type="text" id="tenNV" name="tenNV" placeholder="Nhập Tên nhân viên" value="{{data.tenNV}}">
+      </div><br>
+
+      <div class="row">
+        <span class="col-lg-2"></span>
+        <label class="col-lg-2">Mã nhân viên: </label>
+        <input class="col-lg-4" required type="text" id="maNV" name="maNV" placeholder="Nhập mã nhân viên" value="{{data.maNV}}">
+      </div><br>
+
+      <div class="row">
+        <span class="col-lg-2"></span>
+        <label class="col-lg-2">Điểm trung bình: </label>
+        <input class="col-lg-4" required type="number" id="diemTB" name="diemTB" placeholder="Nhập điểm trung bình" value="{{data.diemTB}}">
+         {{#if diemTBError}}
+        <strong class="alert alert-danger">{{diemTBError}}</strong>
+        {{/if}}
+      </div><br>
+
+    <br>
+
+      <div class="text-center">
+      <button type="submit" class="btn btn-primary">Cập nhật</button>
+      </div>
+
+    </form>
+  </div>
+</body>
+</html>

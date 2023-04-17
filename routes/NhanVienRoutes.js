@@ -27,9 +27,10 @@ router.post("/add", async (req, res) => {
     } else {
       const newNhanVien = new NhanVienModel({ maNV, tenNV, diemTB });
       await newNhanVien.save();
-      res.redirect("/");
+      //res.redirect("/");
+       res.status(200).json(newNhanVien);
     }
-    // res.status(200).json(newNhanVien);
+   
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
@@ -65,5 +66,11 @@ router.post("/delete/:id", async (req, res) => {
   await NhanVienModel.findByIdAndDelete(id);
   res.redirect("/");
 });
+
+router.post('/search', async(req, res)=> {
+    const { tenNV } = req.body;
+    const data = await NhanVienModel.find({ tenNV });
+    res.render('home', { data });
+    });
 
 module.exports = router;

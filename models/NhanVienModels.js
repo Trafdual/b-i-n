@@ -13,4 +13,5 @@ var NhanVienSchema=new Schema({
         type:Number
     }
 });
+
 module.exports=mongoose.model('NhanVien',NhanVienSchema);
